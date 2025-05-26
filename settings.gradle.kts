@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "TechnicalTest_KMP"
 include(":androidApp")
 include(":shared")
+include(":networking")
