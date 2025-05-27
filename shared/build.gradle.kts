@@ -31,10 +31,11 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            implementation(project(":networking"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

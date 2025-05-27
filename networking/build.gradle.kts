@@ -4,6 +4,9 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.compose.compiler)
+
 }
 
 kotlin {
@@ -37,11 +40,24 @@ kotlin {
             //put your multiplatform dependencies here
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.serialization)
+            implementation(libs.ktor.client.mock)
+            implementation(libs.ktor.content.negotiation)
             implementation(libs.ktor.logging)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.koin.core)
+            implementation(compose.components.resources)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.ktor.client.mock)
+            implementation(libs.kotlinx.coroutines.test)
+        }
+
+        androidMain.dependencies {
+            implementation(libs.androidx.activity.compose)
+
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
     }
 }
