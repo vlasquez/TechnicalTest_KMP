@@ -10,7 +10,8 @@ class Koin {
         return startKoin {
             modules(
                 listOf(
-                    networkingModule()
+                    networkingModule(),
+                    videoModule()
                 ),
             )
             appDeclaration()

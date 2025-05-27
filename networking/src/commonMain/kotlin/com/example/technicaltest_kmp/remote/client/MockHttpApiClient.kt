@@ -13,8 +13,9 @@ class MockHttpApiClient {
         engine {
             addHandler { request ->
                 if (request.url.encodedPath == "/video") {
+                    val file = Res.readBytes("files/video-response.json")
                     respond(
-                        content = Res.readBytes("files/video-response.json"),
+                        content = file,
                         status = HttpStatusCode.OK,
                         headers = responseHeaders
                     )

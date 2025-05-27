@@ -14,8 +14,11 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
     buildFeatures {
         compose = true
+        buildConfig = true
+
     }
     packaging {
         resources {
@@ -40,6 +43,7 @@ dependencies {
     implementation(projects.shared)
     implementation(projects.networking)
     implementation(libs.compose.ui)
+    implementation(libs.koin.android)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)

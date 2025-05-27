@@ -40,6 +40,10 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
+        androidMain.dependencies {
+            implementation(libs.koin.android)
+            implementation(libs.koin.core)
+        }
     }
 }
 
