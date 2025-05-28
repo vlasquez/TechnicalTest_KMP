@@ -16,6 +16,7 @@ class VideoViewModel(private val getVideoUrlUseCase: GetVideoUrlUseCase) : ViewM
 
     fun getVideoUrl() {
         viewModelScope.launch {
+            _viewState.value = ViewState.Loading
             getVideoUrlUseCase().onSuccess { video ->
                 _viewState.value = ViewState.Success(video)
             }.onFailure { exception ->

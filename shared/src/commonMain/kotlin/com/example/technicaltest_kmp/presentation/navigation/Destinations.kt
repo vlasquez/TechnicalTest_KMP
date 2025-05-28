@@ -7,5 +7,5 @@ sealed class Destinations {
     object Home
 
     @Serializable
-    object VideoPlayer
+    data class VideoPlayer(val videoUrl: String)
 }

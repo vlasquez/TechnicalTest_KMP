@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.technicaltest_kmp.feature.home.HomeScreen
+import com.example.technicaltest_kmp.feature.videoplayer.VideoPlayerScreen
 
 @Composable
 fun AppNavHost(
@@ -20,6 +21,10 @@ fun AppNavHost(
 
         composable<Destinations.Home> {
             HomeScreen(navController = navController)
+        }
+
+        composable<Destinations.VideoPlayer> {
+            VideoPlayerScreen(navController = navController)
         }
     }
 }
