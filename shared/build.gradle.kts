@@ -4,6 +4,9 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 kotlin {
@@ -36,13 +39,30 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(project(":networking"))
+            implementation(compose.material3)
+            implementation(compose.material)
+            implementation(compose.materialIconsExtended)
+
+            implementation(compose.components.resources)
+            implementation(libs.koin.compose)
+            implementation(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.androidx.navigation.compose)
+            implementation(libs.kotlinx.serialization.json)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
         androidMain.dependencies {
-            implementation(libs.koin.android)
+            implementation(libs.core)
+            implementation(libs.androidx.activity.compose)
             implementation(libs.koin.core)
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
+        }
+        iosMain.dependencies {
+
+            @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+            implementation(compose.components.resources)
         }
     }
 }

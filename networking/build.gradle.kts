@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinx.serialization)
 }
@@ -44,7 +44,7 @@ kotlin {
             implementation(libs.ktor.content.negotiation)
             implementation(libs.ktor.logging)
             implementation(libs.kotlinx.serialization.json)
-            implementation(libs.koin.core)
+            api(libs.koin.core)
             implementation(compose.components.resources)
         }
         commonTest.dependencies {
@@ -56,8 +56,8 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.androidx.activity.compose)
 
-            implementation(libs.koin.android)
-            implementation(libs.koin.androidx.compose)
+            api(libs.koin.android)
+            api(libs.koin.androidx.compose)
         }
     }
 }

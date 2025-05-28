@@ -1,4 +1,4 @@
-package com.example.technicaltest_kmp.viewmodel
+package com.example.technicaltest_kmp.feature.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

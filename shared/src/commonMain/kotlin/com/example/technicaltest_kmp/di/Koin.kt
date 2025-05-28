@@ -11,7 +11,8 @@ class Koin {
             modules(
                 listOf(
                     networkingModule(),
-                    videoModule()
+                    videoModule(),
+                    viewModelModule
                 ),
             )
             appDeclaration()
