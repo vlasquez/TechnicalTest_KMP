@@ -23,8 +23,11 @@ fun AppNavHost(
             HomeScreen(navController = navController)
         }
 
-        composable<Destinations.VideoPlayer> {
-            VideoPlayerScreen(navController = navController)
+        composable<Destinations.VideoPlayer> { backStackEntry ->
+            val videoUrl = backStackEntry.arguments?.getString("videoUrl")
+            videoUrl?.let {
+                VideoPlayerScreen(navController = navController, videoUrl = videoUrl)
+            }
         }
     }
 }

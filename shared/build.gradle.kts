@@ -44,6 +44,8 @@ kotlin {
             implementation(compose.materialIconsExtended)
 
             implementation(compose.components.resources)
+            implementation(compose.components.uiToolingPreview)
+            implementation(libs.compose.ui.backhandler)
             implementation(libs.koin.compose)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.navigation.compose)
@@ -58,6 +60,11 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+            implementation(libs.androidx.media3.exoplayer)
+            implementation(libs.androidx.media3.exoplayer.hls)
+            implementation(libs.androidx.media3.session)
+            implementation(libs.androidx.media3.ui)
+
         }
         iosMain.dependencies {
 
